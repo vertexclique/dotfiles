@@ -53,6 +53,9 @@ values."
      ruby-mode
      ruby-rubocop
      ruby-rubylint
+     robe-mode
+     '((ruby :variables ruby-version-manager 'rvm))
+     '((ruby :variables ruby-test-runner 'rspec))
      html
      c-c++
      erlang
@@ -257,6 +260,10 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+
+   ;; Indentation style
+   indent-tabs-mode nil
+   tab-width 2
    ))
 
 (defun dotspacemacs/user-init ()
@@ -266,7 +273,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default indent-tabs-mode q)
   )
 
 (defun dotspacemacs/user-config ()
