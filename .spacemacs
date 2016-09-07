@@ -37,6 +37,7 @@ values."
      org
      rust
      ruby-on-rails
+     material-theme
      erc
      (shell :variables
             shell-default-height 30
@@ -48,11 +49,13 @@ values."
      scala
      python
      elixir
-     javascript-mode
+     javascript
      ruby
      ruby-mode
      ruby-rubocop
-     ruby-rubylint
+     yaml
+     evil-commentary
+
      robe-mode
      '((ruby :variables ruby-version-manager 'rvm))
      '((ruby :variables ruby-test-runner 'rspec))
@@ -66,7 +69,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      drag-stuff
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -121,10 +126,15 @@ values."
    dotspacemacs-startup-recent-list-size 5
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
+
+   ;; Default theme
+   dotspacemacs-default-theme 'material
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(material
+                         material-light
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -284,6 +294,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (auto-revert-mode)
   (global-company-mode)
+  (drag-stuff-global-mode 1)
+  (golden-ratio-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
