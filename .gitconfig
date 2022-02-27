@@ -5,6 +5,8 @@
         editor = emacs
 [alias]
         co = checkout
+        df = diff
+        st = status
 [color]
         ui = auto
 [color "branch"]
