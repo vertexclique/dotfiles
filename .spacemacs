@@ -32,12 +32,12 @@ values."
      emacs-lisp
      git
      docker
-     dockerfile
      markdown
      org
      rust
      ruby-on-rails
-     material-theme
+     themes-megapack
+     unicode-fonts
      erc
      (shell :variables
             shell-default-height 30
@@ -45,18 +45,15 @@ values."
      spell-checking
      syntax-checking
      version-control
-     scala-mode
      scala
      python
      elixir
      javascript
      ruby
-     ruby-mode
-     ruby-rubocop
      yaml
      evil-commentary
 
-     robe-mode
+     '((treemacs :variables treemacs-use-all-the-icons-theme t))
      '((ruby :variables ruby-version-manager 'rvm))
      '((ruby :variables ruby-test-runner 'rspec))
      html
@@ -120,7 +117,7 @@ values."
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '((recents . 5) (projects . 7))
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
@@ -149,7 +146,7 @@ values."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
